@@ -4,14 +4,19 @@
   top: 0;
   left: 0;
   right: 0;
-  background: var(--mono-white);
-  transition: box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.95);    /* Semi-transparent white */
+  backdrop-filter: blur(10px);               /* Glass effect */
+  -webkit-backdrop-filter: blur(10px);       /* Safari support */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  border-radius: 0 0 16px 16px;              /* Bottom corners only */
+  transition: all 0.3s ease;
   z-index: 1000;
 }
 
-/* Shadow when scrolled */
+/* Enhanced shadow when scrolled */
 .header.scrolled {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.98);     /* Slightly more opaque */
 }
 
 /* Inner container for layout */
@@ -89,15 +94,20 @@ nav a:hover {
 
 /* Mobile styles */
 @media (max-width: 768px) {
+  .header {
+    border-radius: 0 0 12px 12px;          /* Smaller radius on mobile */
+  }
+
   nav {
     flex-direction: column;
-    background: var(--mono-white);
+    background: rgba(255, 255, 255, 0.98);
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 12px 12px;          /* Match header radius */
   }
 
   /* Show hamburger on mobile */
