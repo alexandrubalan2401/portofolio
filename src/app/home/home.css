@@ -1,0 +1,219 @@
+/* About section container */
+.about-section {
+  display: flex; /* side-by-side layout */
+  min-height: 50vh; /* half screen height */
+  padding: 0;
+  margin: 0;
+  margin-top: 5rem;
+}
+/* Social links container */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: var(--mono-white);
+  color: var(--brand-secondary);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-links a:hover {
+  background: var(--brand-secondary);
+  color: var(--mono-white);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.social-links svg {
+  width: 24px;
+  height: 24px;
+}
+/* Text content div */
+.about-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically center */
+  align-items: center; /* horizontally center */
+  padding: 5rem 2rem;
+  background: var(--mono-white);
+  text-align: center;
+}
+
+/* Remove all margins from children */
+.about-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  margin: 0 0 1rem 0; /* only bottom margin */
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  color: var(--mono-700);
+  margin: 0 0 0.5rem 0; /* minimal bottom margin */
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* Remove margin from last paragraph */
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Image div */
+.about-image {
+  flex: 1; /* takes other half */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--mono-white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image container with animation */
+.image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%; /* circular shape */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--mono-white);
+  position: relative;
+  z-index: 2;
+  animation: float 3s ease-in-out infinite; /* floating animation */
+}
+
+/* Animated glowing ring */
+.glow-ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    var(--brand-secondary),
+    var(--brand-accent),
+    var(--brand-secondary)
+  );
+  z-index: 1;
+  animation: rotate 4s linear infinite; /* rotating glow */
+  filter: blur(15px);
+  opacity: 0.7;
+}
+
+/* Floating animation for image */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Rotating animation for glow ring */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Waving hand animation */
+.wave {
+  display: inline-block;
+  animation: wave 2.5s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30% {
+    transform: rotate(14deg);
+  }
+  20%,
+  40% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(14deg);
+  }
+  60% {
+    transform: rotate(-4deg);
+  }
+  70% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Mobile responsive: stack vertically */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column; /* stack vertically */
+    min-height: 100vh; /* full screen on mobile */
+  }
+
+  .about-text,
+  .about-image {
+    flex: none; /* remove flex sizing */
+    min-height: 50vh; /* each takes half screen */
+  }
+
+  .about-text {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .about-text .intro {
+    font-size: 1.1rem;
+  }
+
+  .image-container {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .image-container {
+    width: 280px;
+    height: 280px;
+  }
+
+  .about-text h2 {
+    font-size: 2.2rem;
+  }
+}

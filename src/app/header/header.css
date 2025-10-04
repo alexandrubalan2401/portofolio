@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: var(--mono-white); /* From your palette */
+  background: var(--mono-white);
   transition: box-shadow 0.3s ease;
   z-index: 1000;
 }
@@ -35,7 +35,8 @@
 .logo-text {
   padding: 0.8rem;
 }
-/* Desktop nav: hidden on mobile by default */
+
+/* Desktop nav */
 nav {
   display: flex;
   gap: 1.5rem;
@@ -48,6 +49,7 @@ nav a {
   font-weight: 500;
   transition: color 0.2s;
 }
+
 nav a:hover {
   color: var(--brand-secondary);
 }
@@ -61,6 +63,7 @@ nav a:hover {
   border: none;
   cursor: pointer;
   padding: 0.5rem;
+  z-index: 1001;
 }
 
 /* Hamburger lines */
@@ -71,7 +74,20 @@ nav a:hover {
   transition: transform 0.3s, opacity 0.3s;
 }
 
-/* Show hamburger on mobile */
+/* Hamburger active state: X icon */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -81,23 +97,21 @@ nav a:hover {
     left: 0;
     right: 0;
     padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
+  /* Show hamburger on mobile */
   .hamburger {
     display: flex;
   }
-  /* Hide desktop nav */
+
+  /* Hide mobile nav by default */
   nav:not(.open) {
     display: none;
   }
-}
 
-/* Hamburger active state: X icon */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  /* Show nav when open */
+  nav.open {
+    display: flex;
+  }
 }
