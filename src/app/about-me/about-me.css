@@ -1,0 +1,95 @@
+/* About Me Section - Light background */
+.about-me-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--mono-white); /* White background from your palette */
+  color: var(--brand-primary); /* Black text */
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+/* Content container - 50% width, centered */
+.about-content {
+  max-width: 50%; /* Half display width */
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Main heading */
+.about-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--brand-primary); /* Black */
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+/* Intro paragraph */
+.about-content .intro {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--mono-600); /* Medium gray */
+  margin-bottom: 3rem;
+}
+
+.about-content .intro strong {
+  color: var(--brand-secondary); /* Purple for emphasis */
+  font-weight: 600;
+}
+
+/* Info groups */
+.info-group {
+  margin-bottom: 2rem;
+  text-align: left; /* Left-align for readability */
+  padding: 0 2rem;
+}
+
+.info-group h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--brand-accent); /* Orange for subheadings */
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.875rem;
+}
+
+.info-group p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--mono-700); /* Dark gray text */
+  margin: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+  .about-content {
+    max-width: 70%; /* Wider on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-me-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-content {
+    max-width: 90%; /* Almost full width on mobile */
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-content .intro {
+    font-size: 1rem;
+  }
+
+  .info-group {
+    padding: 0 1rem;
+  }
+}

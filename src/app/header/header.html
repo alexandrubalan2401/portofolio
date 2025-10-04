@@ -1,15 +1,16 @@
 <header class="header" [class.scrolled]="isScrolled">
   <div class="inner">
     <!-- Logo -->
-    <a href="#home" class="logo" aria-label="Home"> 
+    <a href="#home" class="logo" aria-label="Home">
       <img src="logo.svg" alt="Logo" />
     </a>
 
     <!-- Navigation links -->
     <nav [class.open]="isMenuOpen">
       <!-- Toggle mobile menu -->
-      <a href="#home" (click)="closeMenu()">Home</a>
-      <a href="#about" (click)="closeMenu()">About</a>
+
+      <a href="#about-me" (click)="closeMenu()">About me</a>
+      <a href="#skills" (click)="closeMenu()">Skills</a>
       <a href="#projects" (click)="closeMenu()">Projects</a>
       <a href="#contact" (click)="closeMenu()">Contact</a>
     </nav>
