@@ -1,0 +1,165 @@
+/* Projects Section */
+.projects-section {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--mono-white);
+  padding: 4rem 2rem;
+}
+
+/* Content container - 50% width */
+.projects-content {
+  max-width: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+/* Main heading */
+.projects-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+/* Section subtitle */
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--mono-600);
+  margin-bottom: 3rem;
+}
+
+/* Projects grid - 2 columns */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* Project card */
+.project-card {
+  background: var(--mono-100);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: left;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
+  border: 2px solid var(--brand-secondary);
+}
+
+/* Project title */
+.project-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+  margin-bottom: 1rem;
+}
+
+/* Project description */
+.project-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--mono-700);
+  margin-bottom: 1.5rem;
+}
+
+/* Technology tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--mono-white);
+  color: var(--brand-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 20px;
+  border: 1px solid var(--brand-secondary);
+}
+
+/* Project links */
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--mono-white);
+  color: var(--brand-primary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid var(--mono-300);
+  transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+  background: var(--brand-secondary);
+  color: var(--mono-white);
+  border-color: var(--brand-secondary);
+}
+
+.project-links a i {
+  font-size: 1.2rem;
+}
+
+.project-links a svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+  .projects-content {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .projects-content {
+    max-width: 90%;
+  }
+
+  .projects-content h2 {
+    font-size: 2rem;
+  }
+
+  /* Stack cards vertically on mobile */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-links a {
+    justify-content: center;
+  }
+}
