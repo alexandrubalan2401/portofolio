@@ -66,6 +66,11 @@
   max-width: 500px;
 }
 
+.about-text  strong {
+  color: var(--brand-secondary); /* Purple for emphasis */
+  font-weight: 600;
+}
+
 /* Remove margin from last paragraph */
 .about-text p:last-child {
   margin-bottom: 0;
